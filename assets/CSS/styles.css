@@ -4,3 +4,9 @@
     box-sizing: 0px;
 }
 
+.page-top {
+    position: relative;
+    display: flex;
+
+}
+
