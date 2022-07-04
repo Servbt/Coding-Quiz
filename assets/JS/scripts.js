@@ -29,7 +29,7 @@
         var quesBtn3 = document.getElementById("answer3");
         var quesBtn4 = document.getElementById("answer4");
         var container = document.getElementById("btn-container");
-
+        var ansResult = document.getElementById("right-or-wrong");
 
         //traversing to select divider elements
         var quesHeader = document.querySelector("#question");
@@ -55,38 +55,48 @@
         var questionnaire = [
         {
             question: "What is your favorite color?",
-            answerA: "red",
-            answerB: "blue",
-            answerC: "green",
-            answerD: "black",
+            answers: [
+            {answerA: "red", correct: true},
+            {answerB: "blue", correct: false},
+            {answerC: "green", correct: false},
+            {answerD: "black", correct: false}
+            ]
         },
         {  
-            question: "What is your new favorite color....?",
-            answerA: "white",
-            answerB: "yellow",
-            answerC: "grey",
-            answerD: "pink",
+            question: "What is you",
+            answers: [
+            {answerA: "red", correct: true},
+            {answerB: "blue", correct: false},
+            {answerC: "green", correct: false},
+            {answerD: "black", correct: false}
+            ]
         },
         {
-            question: "What?",
-            answerA: "white",
-            answerB: "yellow",
-            answerC: "grey",
-            answerD: "pink",
+            question: "What is color",
+            answers: [
+            {answerA: "red", correct: true},
+            {answerB: "blue", correct: false},
+            {answerC: "green", correct: false},
+            {answerD: "black", correct: false}
+            ]
         },
         {
-            question: "quesrion4?",
-            answerA: "whi123te",
-            answerB: "yeasllow",
-            answerC: "gwdqrey",
-            answerD: "pinasdk",
+            question: "COLOR",
+            answers: [
+            {answerA: "red", correct: true},
+            {answerB: "blue", correct: false},
+            {answerC: "green", correct: false},
+            {answerD: "black", correct: false}
+            ]
         },
         {
-            question: "question5",
-            answerA: "whasfdsite",
-            answerB: "yelawfcaslow",
-            answerC: "greafaxzy",
-            answerD: "pinzxczxcdiek",
+            question: "ASDO JAO{FJA{OSF{Q !?",
+            answers: [
+            {answerA: "red", correct: true},
+            {answerB: "blue", correct: false},
+            {answerC: "green", correct: false},
+            {answerD: "black", correct: false}
+            ]
         }
         ]
         
@@ -104,7 +114,7 @@
                 // primer value that question array starts at
                 var quesIndex = 0;
 
-                // beggining questions
+                // beggining questions...
                 quesHeader.textContent = questionnaire[quesIndex].question;
                 quesAns1.textContent = questionnaire[quesIndex].answerA;
                 quesAns2.textContent = questionnaire[quesIndex].answerB;
@@ -116,11 +126,12 @@
 
                      if (quesIndex  >= 0) {      
                             // max number of questions... something happens after
-                            if (quesIndex === 5) {
+                            if (quesIndex === 4) {
                              console.log("you are done!!");
                              } 
                         // actually goes up the index and displays it on the page
                          quesIndex++;
+                         console.log("question answered");
                     quesHeader.textContent = questionnaire[quesIndex].question;
                     quesAns1.textContent = questionnaire[quesIndex].answerA;
                     quesAns2.textContent = questionnaire[quesIndex].answerB;
@@ -152,5 +163,5 @@
     
     };
     
-    
+    // starts main function for quiz game
     startBtn.addEventListener("click", quizStart)       
