@@ -59,7 +59,7 @@
     margin: 2px;
 }
 
-.question-head {
+#question {
     font-weight: bold;
     position: relative;
     display: flex;
