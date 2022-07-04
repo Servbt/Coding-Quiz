@@ -41,11 +41,13 @@
         var quesAns2 = document.querySelector("#answer2");
         var quesAns3 = document.querySelector("#answer3");
         var quesAns4 = document.querySelector("#answer4");
+        var lineBrk = document.querySelector("#bottom");
 
         
 
         //buttons start off as hidden
         container.setAttribute("style", "display: none");
+        lineBrk.setAttribute("style", "display: none");
         
         //variables for countdown timer
         var timerCnt = document.querySelector("#time");

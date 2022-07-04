@@ -6,6 +6,7 @@
     --hoverClr: rgb(81, 58, 129);
 }
 
+/* View high scores button and timer on the right */
 .page-top {
     position: relative;
     display: flex;
@@ -15,6 +16,7 @@
     font-size: 20px;
 }
 
+/* all of this is for the front page itself */
 .header {
     text-align: center;
     font-family: sans-serif;
@@ -42,12 +44,14 @@
     font-size: 15px;
 }
 
+
+/* cute little effect for hovering over buttons */
 .button:hover {
     background-color: var(--hoverClr);
 }
 
 
-
+/* dimesntions for question buttons */
 .new-btns {
     flex-direction: column;
     display: flex;
@@ -55,10 +59,12 @@
     padding-left: 21%;
 }
 
+/* space inbetween buttons */
 .ques-btn {
     margin: 2px;
 }
 
+/* actual question itself */
 #question {
     font-weight: bold;
     position: relative;
@@ -70,3 +76,15 @@
     padding-left: 20%;
     font-family: sans-serif;
 }
+
+
+/* this is the line underneath the buttons */
+#bottom {
+    color: gray;
+    margin-top: 60px;
+    margin-left: 21%;
+    display: flex;
+    width: 50vw;
+    
+}
+
