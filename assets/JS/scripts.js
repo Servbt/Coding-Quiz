@@ -31,10 +31,6 @@
         var container = document.getElementById("btn-container");
 
 
-
-        var currentQuestion;
-
-
         //traversing to select divider elements
         var quesHeader = document.querySelector("#question");
         var quesAns1 = document.querySelector("#answer1");
@@ -55,7 +51,7 @@
         timerCnt.textContent = "Time Left: " + timeLeft;
         
         
-        // questions themselves
+        // questions themselves made into objects inside an array
         var questionnaire = [
         {
             question: "What is your favorite color?",
@@ -97,8 +93,7 @@
 
         
         function quizStart (){
-            
-
+        
 
             //once the button is pressed the buttons appear back
             container.setAttribute("style", "display: flex");
@@ -106,40 +101,39 @@
             console.log("hide quiz main page");
 
                 
+                // primer value that question array starts at
                 var quesIndex = 0;
 
-
+                // beggining questions
                 quesHeader.textContent = questionnaire[quesIndex].question;
                 quesAns1.textContent = questionnaire[quesIndex].answerA;
                 quesAns2.textContent = questionnaire[quesIndex].answerB;
                 quesAns3.textContent = questionnaire[quesIndex].answerC;
                 quesAns4.textContent = questionnaire[quesIndex].answerD;
 
-
+                //function for going to the next portion of the page
                  function next(){
-                     if (quesIndex  >= 0) {
 
-                         if (quesIndex === 5) {
+                     if (quesIndex  >= 0) {      
+                            // max number of questions... something happens after
+                            if (quesIndex === 5) {
                              console.log("you are done!!");
-                        
                              } 
-
+                        // actually goes up the index and displays it on the page
                          quesIndex++;
                     quesHeader.textContent = questionnaire[quesIndex].question;
                     quesAns1.textContent = questionnaire[quesIndex].answerA;
                     quesAns2.textContent = questionnaire[quesIndex].answerB;
                     quesAns3.textContent = questionnaire[quesIndex].answerC;
                     quesAns4.textContent = questionnaire[quesIndex].answerD;
-
                 }
             }
-
-
+            
+            //  runs function to go up the index once a an answer is chosen
             quesBtn1.addEventListener("click", next);
             quesBtn2.addEventListener("click", next);
             quesBtn3.addEventListener("click", next);
             quesBtn4.addEventListener("click", next);
-
 
             
         //function for timer itself
