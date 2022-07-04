@@ -145,10 +145,13 @@
                     
                 }
             }
-                
-                function checkAnswer(){
-                    console.log(questionnaire[quesIndex].answers[0].answerA);
-                    
+                // I'm not really sure...
+                function checkAnswer(event){
+                    console.log(event.target);
+                    const selectedAnswer = event.target;
+                    const correctAns = selectedAnswer.dataset.correct;
+                    console.log(correctAns);
+
                 }
 
         
