@@ -7,8 +7,10 @@
     // once they are hidden I have to display the new contents for the quiz ~
         // I have to make an object with a header and 4 answer buttons ~
         // those buttons need event listeners to go to the next question ~
-        // after a question is answered, right or wrong is displayed next as well
+        // after a question is answered, right or wrong is displayed next as well 
             //need something to happen once I click an answer.. right or wrong
+            // true or false right..?
+            // 
         // if wrong answer is given I need to tick the timer down
         // and finally i need to save the responses to score the user
 
@@ -54,48 +56,48 @@
         // questions themselves made into objects inside an array
         var questionnaire = [
         {
-            question: "What is your favorite color?",
+            question: "String values must be enclosed within _______ when being assigned to variables.",
             answers: [
-            {answerA: "red", correct: true},
-            {answerB: "blue", correct: false},
-            {answerC: "green", correct: false},
-            {answerD: "black", correct: false}
+            {answerA: "commas", correct: true},
+            {answerB: "parenthesis", correct: false},
+            {answerC: "quotes", correct: false},
+            {answerD: "curly brackets", correct: false}
             ]
         },
         {  
-            question: "What is you",
+            question: "The condition in an if-else statement is enclosed with _______.",
             answers: [
-            {answerA: "red", correct: true},
-            {answerB: "blue", correct: false},
-            {answerC: "green", correct: false},
-            {answerD: "black", correct: false}
+            {answerA: "quotes", correct: true},
+            {answerB: "parenthesis", correct: false},
+            {answerC: "square brackets", correct: false},
+            {answerD: "curly brackets", correct: false}
             ]
         },
         {
-            question: "What is color",
+            question: "Commonly used data types DO NOT include:",
             answers: [
-            {answerA: "red", correct: true},
-            {answerB: "blue", correct: false},
-            {answerC: "green", correct: false},
-            {answerD: "black", correct: false}
+            {answerA: "Strings", correct: true},
+            {answerB: "Booleans", correct: false},
+            {answerC: "alerts", correct: false},
+            {answerD: "numbers", correct: false}
             ]
         },
         {
-            question: "COLOR",
+            question: "A very useful tool used during development and debugging for printing content to the debugger is:",
             answers: [
-            {answerA: "red", correct: true},
-            {answerB: "blue", correct: false},
-            {answerC: "green", correct: false},
-            {answerD: "black", correct: false}
+            {answerA: "terminal/bash", correct: true},
+            {answerB: "javascript", correct: false},
+            {answerC: "for loops", correct: false},
+            {answerD: "console.log", correct: false}
             ]
         },
         {
-            question: "ASDO JAO{FJA{OSF{Q !?",
+            question: "Arrays in javascript can be used to store _______.",
             answers: [
-            {answerA: "red", correct: true},
-            {answerB: "blue", correct: false},
-            {answerC: "green", correct: false},
-            {answerD: "black", correct: false}
+            {answerA: "numbers and strings", correct: true},
+            {answerB: "other arrays", correct: false},
+            {answerC: "booleans", correct: false},
+            {answerD: "all of the above", correct: false}
             ]
         }
         ]
@@ -113,38 +115,54 @@
                 
                 // primer value that question array starts at
                 var quesIndex = 0;
-
+                
                 // beggining questions...
                 quesHeader.textContent = questionnaire[quesIndex].question;
-                quesAns1.textContent = questionnaire[quesIndex].answerA;
-                quesAns2.textContent = questionnaire[quesIndex].answerB;
-                quesAns3.textContent = questionnaire[quesIndex].answerC;
-                quesAns4.textContent = questionnaire[quesIndex].answerD;
-
+                quesAns1.textContent = questionnaire[quesIndex].answers[0].answerA;
+                quesAns2.textContent = questionnaire[quesIndex].answers[1].answerB;
+                quesAns3.textContent = questionnaire[quesIndex].answers[2].answerC;
+                quesAns4.textContent = questionnaire[quesIndex].answers[3].answerD;
+                
                 //function for going to the next portion of the page
-                 function next(){
+                function next(){
+
 
                      if (quesIndex  >= 0) {      
-                            // max number of questions... something happens after
-                            if (quesIndex === 4) {
-                             console.log("you are done!!");
-                             } 
+                         // max number of questions... something happens after                            
+                         if (quesIndex === 4) {
+                          console.log("you are done!!");
+                          container.setAttribute("style", "display: none");
+                         } 
+                         
                         // actually goes up the index and displays it on the page
                          quesIndex++;
                          console.log("question answered");
                     quesHeader.textContent = questionnaire[quesIndex].question;
-                    quesAns1.textContent = questionnaire[quesIndex].answerA;
-                    quesAns2.textContent = questionnaire[quesIndex].answerB;
-                    quesAns3.textContent = questionnaire[quesIndex].answerC;
-                    quesAns4.textContent = questionnaire[quesIndex].answerD;
+                    quesAns1.textContent = questionnaire[quesIndex].answers[0].answerA;
+                    quesAns2.textContent = questionnaire[quesIndex].answers[1].answerB;
+                    quesAns3.textContent = questionnaire[quesIndex].answers[2].answerC;
+                    quesAns4.textContent = questionnaire[quesIndex].answers[3].answerD;
+                    
                 }
             }
-            
+                
+                function checkAnswer(){
+                    console.log(questionnaire[quesIndex].answers[0].answerA);
+                    
+                }
+
+        
             //  runs function to go up the index once a an answer is chosen
             quesBtn1.addEventListener("click", next);
             quesBtn2.addEventListener("click", next);
             quesBtn3.addEventListener("click", next);
             quesBtn4.addEventListener("click", next);
+
+            // checkAnswer right or wrong
+            quesBtn1.addEventListener("click", checkAnswer);
+            quesBtn2.addEventListener("click", checkAnswer);
+            quesBtn3.addEventListener("click", checkAnswer);
+            quesBtn4.addEventListener("click", checkAnswer);
 
             
         //function for timer itself
